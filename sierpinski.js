@@ -38,6 +38,7 @@ window.onload = function() {
 
 		if (depth === 0) {
 			chaos.context.beginPath();
+
 			// move to top point of triangle
 			chaos.context.moveTo(Math.cos(angle), Math.sin(angle));
 			angle += (Math.PI * 2) / 3;
@@ -50,9 +51,18 @@ window.onload = function() {
 			chaos.context.lineTo(Math.cos(angle), Math.sin(angle));
 
 			// fill will close the shape
+			chaos.context.fillStyle = "#fff";
 			chaos.context.fill();
 		} else {
 			// draw the top triangle
+			chaos.context.save();
+			chaos.context.translate(Math.cos(angle) * 0.5, Math.sin(angle) * 0.5);
+			chaos.context.scale(0.5, 0.5);
+			drawTriangle(depth - 1);
+			chaos.context.restore();
+
+			// draw the lower right triangle
+			angle += (Math.PI * 2) / 3;
 			chaos.context.save();
 			chaos.context.translate(Math.cos(angle) * 0.5, Math.sin(angle) * 0.5);
 			chaos.context.scale(0.5, 0.5);
