@@ -9,7 +9,7 @@ window.onload = function () {
     size = chaos.height * 0.5;
     draw();
 
-    document.body.addEventListener('keyup', function (event) {
+    document.body.addEventListener("keyup", function (event) {
       switch (event.keyCode) {
         case 32: // space
           maxDepth += 1;
@@ -51,7 +51,7 @@ window.onload = function () {
       chaos.context.lineTo(Math.cos(angle), Math.sin(angle));
 
       // fill will close the shape
-      chaos.context.fillStyle = '#fff';
+      chaos.context.fillStyle = "#fff";
       chaos.context.fill();
     } else {
       // draw the top triangle

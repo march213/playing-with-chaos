@@ -3,8 +3,8 @@ const chaos = (function () {
     // Initialize chaos by finding the canvas on the page
     // and resizing it to the full size of the browser
     init() {
-      this.canvas = document.getElementById('canvas');
-      this.context = this.canvas.getContext('2d');
+      this.canvas = document.getElementById("canvas");
+      this.context = this.canvas.getContext("2d");
       this.setSize(window.innerWidth, window.innerHeight);
     },
 
@@ -26,10 +26,12 @@ const chaos = (function () {
 
     // Pops up a bitmap image representation of the canvas in a new window
     popImage() {
-      const win = window.open('', 'Canvas Image');
-      const src = this.canvas.dataToURL('image/png');
+      const win = window.open("", "Canvas Image");
+      const src = this.canvas.dataToURL("image/png");
 
-      win.document.write(`<img src=${src} width=${this.width} height=${this.height} />`);
+      win.document.write(
+        `<img src=${src} width=${this.width} height=${this.height} />`
+      );
     },
   };
 })();
